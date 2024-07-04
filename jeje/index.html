@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página para Mi Novia</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <style>
+        /* Estilos específicos en línea para la demostración */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            scroll-behavior: smooth; /* Desplazamiento suave */
+        }
+
+        .section {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px; /* Espacio interno */
+            box-sizing: border-box; /* Incluye el padding en el tamaño total */
+            min-height: 100vh; /* Mínimo altura para ocupar toda la pantalla */
+        }
+
+        .section h1 {
+            color: aqua; /* Color de texto personalizado */
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: white;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .carousel-item {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 50%;
+            overflow: hidden;
+            animation: rotate-carousel 6s linear infinite;
+            perspective: 1000px; /* Añade perspectiva para el efecto 3D */
+            cursor: pointer; /* Cambia el cursor al pasar por encima */
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+            transition: transform 0.5s; /* Transición suave para la rotación */
+        }
+
+        .carousel-item:hover img {
+            transform: rotateY(360deg); /* Rotación 3D al hacer hover */
+        }
+
+        @keyframes rotate-carousel {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Estilos para el botón */
+        .btn-ver-imagenes {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-ver-imagenes:hover {
+            background-color: #ff5252;
+        }
+
+        /* Estilos específicos para la primera sección */
+        #bienvenida {
+            background-image: url('jiji.gif'); /* Imagen de fondo */
+            background-size: cover; /* Cubre todo el contenedor */
+            background-position: center center; /* Centra la imagen de fondo */
+        }
+
+        /* Estilos específicos para la segunda sección */
+        #imagenes {
+            background-image: url('jijiji.jpg'); /* Imagen de fondo */
+            background-size: cover; /* Cubre todo el contenedor */
+            background-position: center center; /* Centra la imagen de fondo */
+        }
+
+        /* Estilos específicos para la tercera sección */
+        #mensaje {
+            background-image: url('fondo_mensaje.jpg'); /* Imagen de fondo */
+            background-size: cover; /* Cubre todo el contenedor */
+            background-position: center center; /* Centra la imagen de fondo */
+        }
+
+        /* Estilos para los corazones */
+        .hearts {
+            position: relative;
+            height: 150px; /* Ajusta la altura del contenedor de corazones */
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px; /* Tamaño de los corazones */
+            height: 20px; /* Tamaño de los corazones */
+            background-color: #ff0000; /* Color rojo */
+            opacity: 0.7;
+            border-radius: 50%;
+            pointer-events: none; /* Evita que los corazones sean clickeables */
+            animation: fall 3s linear infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-color: inherit;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+            transform: rotate(45deg);
+        }
+
+        .heart::after {
+            top: -10px;
+            right: 0;
+            transform: rotate(-45deg);
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotateZ(0deg) scale(0.7);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(800px) rotateZ(720deg) scale(0.3);
+                opacity: 0;
+            }
+        }
+        .btn-flor {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    background-color: #ff69b4; /* Color rosa intenso */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-flor:hover {
+    background-color: #ff1493; /* Cambio de color al hacer hover */
+}
+#mensaje {
+    background-color: #ffcccc; /* Color de fondo más llamativo */
+    background-image: url('fondo_mensaje.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Cubre todo el contenedor */
+    background-position: center center; /* Centra la imagen de fondo */
+    color: #333; /* Color de texto */
+    padding: 50px 20px; /* Espacio interno */
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+    text-align: center; /* Alineación de texto centrada */
+}
+    </style>
+</head>
+<body>
+    <!-- Primera Sección - Bienvenida -->
+    <div id="bienvenida" class="section">
+        <h1>Bienvenida mi amor!</h1>
+        <div class="hearts">
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+        </div>
+        <p>Aquí comienza nuestro viaje juntos...</p>
+        <button class="btn-ver-imagenes" onclick="scrollToSection('imagenes')">Ver Imágenes Especiales</button>
+    </div>
+
+    <!-- Segunda Sección - Imágenes -->
+    <div id="imagenes" class="section">
+        <h1 style="color: blueviolet;">Mensaje Especial</h1>
+        <p style="color: rgb(0, 255, 255);">Quiero expresarte lo especial que eres para mí en cada detalle. Cada imagen aquí captura un momento único de nuestro amor, un recordatorio de lo que significas en mi vida. Contigo, encuentro la felicidad más pura y el amor más profundo. Eres mi inspiración constante y mi razón para sonreír todos los días...</p>
+        <div class="carousel-container">
+            <div class="carousel-item" onclick="showHearts(event)">
+                <img src="foto1.jpg" alt="Imagen 1">
+            </div>
+            <div class="carousel-item" onclick="showHearts(event)">
+                <img src="foto2.jpg" alt="Imagen 2">
+            </div>
+            <div class="carousel-item" onclick="showHearts(event)">
+                <img src="foto3.jpg" alt="Imagen 3">
+            </div>
+            <div class="carousel-item" onclick="showHearts(event)">
+                <img src="foto4.jpg" alt="Imagen 4">
+            </div>
+            <div class="carousel-item" onclick="showHearts(event)">
+                <img src="foto5.jpg" alt="Imagen 5">
+            </div>
+        </div>
+    </div>
+
+    <!-- Tercera Sección - Mensaje Bonito -->
+    <div id="mensaje" class="section">
+        <h1 style="color: rgb(221, 77, 197);">Una flor tan hermosa como tú</h1>
+        <p style="color: rgb(211, 54, 146);">Como esta flor, tu belleza y tu amor llenan mi vida de colores y alegría. Eres mi inspiración y mi alegría constante.</p>
+        <a href="flor.html">
+            <button class="btn-flor">mirame :3</button>
+        </a>
+    </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showHearts(event) {
+            const heartsContainer = document.createElement('div');
+            heartsContainer.classList.add('hearts-container');
+
+            // Generar corazones
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = `${Math.random() * 100}vw`; // Posición horizontal aleatoria
+                heart.style.top = `${Math.random() * 100}vh`; // Posición vertical aleatoria
+                heart.style.animationDuration = `${Math.random() * 2 + 1}s`; // Duración de la animación aleatoria
+                heartsContainer.appendChild(heart);
+            }
+
+            // Añadir contenedor de corazones al cuerpo del documento
+            document.body.appendChild(heartsContainer);
+
+            // Eliminar el contenedor de corazones después de un tiempo
+            setTimeout(() => {
+                heartsContainer.remove();
+            }, 3000); // 3 segundos
+        }
+    </script>
+</body>
+</html>
